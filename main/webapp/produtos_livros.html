@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Livros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <painel>
+        <h2> Livros </h2>
+        <table>
+            <thead>
+                <tr><th>Imagem</th><th>Produto</th><th>Preço</th><th>Comprar</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Java Avançado"></td>
+                    <td>Java Avançado<br>Técnicas avançadas em Java</td>
+                    <td>R$ 99,90</td>
+                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L001"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
+                </tr>
+                <tr>
+                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="CSS Moderno"></td>
+                    <td>CSS Moderno<br>Guia de estilo e design web</td>
+                    <td>R$ 79,90</td>
+                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L002"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
+                </tr>
+                <tr>
+                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="História do Brasil"></td>
+                    <td>História do Brasil<br>Narrativas dos fatos históricos</td>
+                    <td>R$ 64,90</td>
+                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L003"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
+                </tr>
+                <tr>
+                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Fotografia"></td>
+                    <td>Fotografia<br>Manual de fotografia digital</td>
+                    <td>R$ 89,90</td>
+                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L004"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
+                </tr>
+                <tr>
+                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Receitas Veganas"></td>
+                    <td>Receitas Veganas<br>Receitas saudáveis e práticas</td>
+                    <td>R$ 59,90</td>
+                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L005"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
+                </tr>
+                <tr>
+                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Autoajuda"></td>
+                    <td>Autoajuda<br>Foco e produtividade</td>
+                    <td>R$ 69,90</td>
+                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L006"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
+                </tr>
+            </tbody>
+        </table>
+    </painel>
+</body>
+</html>

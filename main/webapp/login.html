@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <painel>
+        <h2>Login</h2>
+        <form method="post" action="LoginServlet" class="form-card">
+            <div class="form-group">
+                <label>Email:<br>
+                    <input type="email" name="login" required autocomplete="username" placeholder="seu@exemplo.com">
+                </label>
+            </div>
+            <div class="form-group">
+                <label>Senha:<br>
+                    <input type="password" name="senha" required autocomplete="current-password" minlength="6" placeholder="Mínimo 6 caracteres">
+                </label>
+            </div>
+            <button class="botao" type="submit">Entrar</button>
+        </form>
+        <mensagem>Não tem cadastro? <a href="CadastrarServlet" target="leftFrame">Cadastre-se aqui</a></mensagem>
+    </painel>
+</body>
+</html>
