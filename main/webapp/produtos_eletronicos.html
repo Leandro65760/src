@@ -8,49 +8,104 @@
 <body>
     <painel>
         <h2> Eletrônicos </h2>
-        <table>
-            <thead>
-                <tr><th>Imagem</th><th>Produto</th><th>Preço</th><th>Comprar</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/fone.svg" alt="Fone"></td>
-                    <td>Fone Bluetooth<br>Cancelamento de ruído</td>
-                    <td>R$ 249,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="E001"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/celular.svg" alt="Smartphone"></td>
-                    <td>Smartphone<br>128GB e câmera tripla</td>
-                    <td>R$ 1.999,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="E002"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/notebook.svg" alt="Notebook"></td>
-                    <td>Notebook<br>Processador rápido</td>
-                    <td>R$ 4.299,00</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="E003"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/relogio.svg" alt="Smartwatch"></td>
-                    <td>Smartwatch<br>Monitor cardíaco</td>
-                    <td>R$ 549,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="E004"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/tablet.svg" alt="Tablet"></td>
-                    <td>Tablet<br>10 polegadas com caneta</td>
-                    <td>R$ 1.299,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="E005"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/caixa.svg" alt="Caixa de som"></td>
-                    <td>Caixa de som<br>Bluetooth portátil</td>
-                    <td>R$ 189,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="E006"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/fone.svg" alt="Fone">
+                <div class="produto-info">
+                    <h3>Fone Bluetooth</h3>
+                    <p class="produto-desc">Cancelamento de ruído</p>
+                    <p class="produto-preco">R$ 249,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="E001">
+                        <div class="quantidade-group">
+                            <label for="qty-E001">Qtd:</label>
+                            <input type="number" id="qty-E001" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/celular.svg" alt="Smartphone">
+                <div class="produto-info">
+                    <h3>Smartphone</h3>
+                    <p class="produto-desc">128GB e câmera tripla</p>
+                    <p class="produto-preco">R$ 1.999,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="E002">
+                        <div class="quantidade-group">
+                            <label for="qty-E002">Qtd:</label>
+                            <input type="number" id="qty-E002" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/notebook.svg" alt="Notebook">
+                <div class="produto-info">
+                    <h3>Notebook</h3>
+                    <p class="produto-desc">Processador rápido</p>
+                    <p class="produto-preco">R$ 4.299,00</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="E003">
+                        <div class="quantidade-group">
+                            <label for="qty-E003">Qtd:</label>
+                            <input type="number" id="qty-E003" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/relogio.svg" alt="Smartwatch">
+                <div class="produto-info">
+                    <h3>Smartwatch</h3>
+                    <p class="produto-desc">Monitor cardíaco</p>
+                    <p class="produto-preco">R$ 549,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="E004">
+                        <div class="quantidade-group">
+                            <label for="qty-E004">Qtd:</label>
+                            <input type="number" id="qty-E004" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/tablet.svg" alt="Tablet">
+                <div class="produto-info">
+                    <h3>Tablet</h3>
+                    <p class="produto-desc">10 polegadas com caneta</p>
+                    <p class="produto-preco">R$ 1.299,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="E005">
+                        <div class="quantidade-group">
+                            <label for="qty-E005">Qtd:</label>
+                            <input type="number" id="qty-E005" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/caixa.svg" alt="Caixa de som">
+                <div class="produto-info">
+                    <h3>Caixa de som</h3>
+                    <p class="produto-desc">Bluetooth portátil</p>
+                    <p class="produto-preco">R$ 189,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="E006">
+                        <div class="quantidade-group">
+                            <label for="qty-E006">Qtd:</label>
+                            <input type="number" id="qty-E006" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </painel>
 </body>
 </html>

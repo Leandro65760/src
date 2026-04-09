@@ -8,49 +8,104 @@
 <body>
     <painel>
         <h2> Roupas </h2>
-        <table>
-            <thead>
-                <tr><th>Imagem</th><th>Produto</th><th>Preço</th><th>Comprar</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/camisa.svg" alt="Camisa"></td>
-                    <td>Camisa Polo<br>Algodão premium</td>
-                    <td>R$ 89,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="R001"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/calca.svg" alt="Calça"></td>
-                    <td>Calça Jeans<br>Corte moderno</td>
-                    <td>R$ 149,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="R002"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/jaqueta.svg" alt="Jaqueta"></td>
-                    <td>Jaqueta<br>Leve e confortável</td>
-                    <td>R$ 219,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="R003"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/vestido.svg" alt="Vestido"></td>
-                    <td>Vestido<br>Estampa exclusiva</td>
-                    <td>R$ 129,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="R004"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/tenis.svg" alt="Tênis"></td>
-                    <td>Tênis<br>Esportivo confortável</td>
-                    <td>R$ 179,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="R005"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/bone.svg" alt="Boné"></td>
-                    <td>Boné<br>Ajuste traseiro</td>
-                    <td>R$ 49,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="R006"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/camisa.svg" alt="Camisa">
+                <div class="produto-info">
+                    <h3>Camisa Polo</h3>
+                    <p class="produto-desc">Algodão premium</p>
+                    <p class="produto-preco">R$ 89,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="R001">
+                        <div class="quantidade-group">
+                            <label for="qty-R001">Qtd:</label>
+                            <input type="number" id="qty-R001" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/calca.svg" alt="Calça">
+                <div class="produto-info">
+                    <h3>Calça Jeans</h3>
+                    <p class="produto-desc">Corte moderno</p>
+                    <p class="produto-preco">R$ 149,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="R002">
+                        <div class="quantidade-group">
+                            <label for="qty-R002">Qtd:</label>
+                            <input type="number" id="qty-R002" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/jaqueta.svg" alt="Jaqueta">
+                <div class="produto-info">
+                    <h3>Jaqueta</h3>
+                    <p class="produto-desc">Leve e confortável</p>
+                    <p class="produto-preco">R$ 219,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="R003">
+                        <div class="quantidade-group">
+                            <label for="qty-R003">Qtd:</label>
+                            <input type="number" id="qty-R003" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/vestido.svg" alt="Vestido">
+                <div class="produto-info">
+                    <h3>Vestido</h3>
+                    <p class="produto-desc">Estampa exclusiva</p>
+                    <p class="produto-preco">R$ 129,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="R004">
+                        <div class="quantidade-group">
+                            <label for="qty-R004">Qtd:</label>
+                            <input type="number" id="qty-R004" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/tenis.svg" alt="Tênis">
+                <div class="produto-info">
+                    <h3>Tênis</h3>
+                    <p class="produto-desc">Esportivo confortável</p>
+                    <p class="produto-preco">R$ 179,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="R005">
+                        <div class="quantidade-group">
+                            <label for="qty-R005">Qtd:</label>
+                            <input type="number" id="qty-R005" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/bone.svg" alt="Boné">
+                <div class="produto-info">
+                    <h3>Boné</h3>
+                    <p class="produto-desc">Ajuste traseiro</p>
+                    <p class="produto-preco">R$ 49,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="R006">
+                        <div class="quantidade-group">
+                            <label for="qty-R006">Qtd:</label>
+                            <input type="number" id="qty-R006" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </painel>
 </body>
 </html>

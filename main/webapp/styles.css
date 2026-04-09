@@ -1,41 +1,138 @@
-body {
+/* ======================
+   GLOBAL STYLES
+   ====================== */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #eef3f7;
-    color: #172b4d;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #2c3e50;
+    min-height: 100vh;
+}
+
+/* ======================
+   HEADER / NAVBAR
+   ====================== */
 cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, #3b82f6, #0f172a);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 10px 24px;
+    padding: 12px 28px;
     box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 80px;
 }
 
-cabecalho .logo {
-    height: 50px;
-    border-radius: 8px;
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-cabecalho nav a {
+.btn-home {
+    background: rgba(255, 255, 255, 0.2);
     color: white;
-    margin-left: 18px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-home:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.navbar-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-icon {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2) translateY(-4px);
+    filter: brightness(1.2);
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff6b6b;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
     font-weight: bold;
 }
 
-frame-row {
-    display: flex;
-    height: calc(100vh - 80px);
-}
-
+/* ======================
+   FRAMES LAYOUT
+   ====================== */
 .frame-top {
     width: 100%;
     height: 80px;
     border: none;
+    display: block;
 }
 
 .frame-row {
@@ -45,108 +142,225 @@ frame-row {
 
 .frame-left {
     flex: 0 0 280px;
-    border-right: 2px solid #cbd5e1;
+    border-right: 2px solid #e0e6ed;
+    background: white;
+    overflow-y: auto;
 }
 
 .frame-right {
     flex: 1;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
+/* ======================
+   PANEL & CONTAINER
+   ====================== */
 painel {
-    padding: 18px;
+    display: block;
+    padding: 24px;
+    background: white;
+    margin: 16px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+painel h2 {
+    color: #667eea;
+    font-size: 28px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #667eea;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================
+   DEPARTAMENTOS
+   ====================== */
 departamento {
     display: block;
-    margin-bottom: 14px;
-    background: #ffffff;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 12px;
     padding: 14px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    transition: all 0.3s ease;
+}
+
+departamento:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25);
 }
 
 departamento a {
-    color: #1d4ed8;
+    color: white;
     font-weight: 700;
     text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
 }
 
-produto {
-    display: block;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 18px 0;
+departamento a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-.produto-imagem {
-    width: 80px;
-    height: 80px;
+/* ======================
+   PRODUTOS - GRID LAYOUT
+   ====================== */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.produto-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(102, 126, 234, 0.2);
+}
+
+.produto-card .produto-imagem {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid #cbd5e1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+.produto-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.produto-info h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.produto-desc {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.produto-preco {
+    font-size: 18px;
+    color: #667eea;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.produto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.quantidade-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantidade-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 30px;
+}
+
+.quantidade-group input {
+    flex: 1;
+    padding: 8px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.quantidade-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ======================
+   BUTTONS
+   ====================== */
 .botao {
     display: inline-block;
-    background: #2563eb;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 10px 16px;
+    padding: 10px 20px;
     border-radius: 10px;
     border: none;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.2);
+    font-size: 14px;
 }
 
 .botao:hover {
-    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
-table {
+.botao:active {
+    transform: translateY(0);
+}
+
+.botao-large {
+    padding: 14px 32px;
+    font-size: 16px;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
 }
 
-thead th {
-    text-align: left;
-    padding: 14px 10px;
-    background: #0f172a;
-    color: white;
-    font-weight: 600;
+.botao-comprar {
+    padding: 12px;
+    font-size: 14px;
 }
 
-tbody td {
-    padding: 14px 10px;
-    border-bottom: 1px solid #cbd5e1;
-    vertical-align: middle;
-}
-
-input[type="number"] {
-    width: 70px;
-    padding: 8px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-}
-
+/* ======================
+   FORMS
+   ====================== */
 form {
     margin: 0;
 }
 
 .form-card {
-    background: #ffffff;
-    padding: 18px;
+    background: white;
+    padding: 24px;
     border-radius: 14px;
-    border: 1px solid #d1d5db;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    border: 2px solid #e0e6ed;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     font-weight: 600;
-    color: #0f172a;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 8px;
 }
 
 input[type="email"],
@@ -155,44 +369,153 @@ input[type="password"],
 input[type="text"],
 input[type="number"] {
     width: 100%;
-    max-width: 100%;
     padding: 12px 14px;
-    border: 1px solid #cbd5e1;
+    border: 2px solid #e0e6ed;
     border-radius: 10px;
-    font-size: 1rem;
-    margin-top: 8px;
-    box-sizing: border-box;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
 input:invalid {
-    border-color: #dc2626;
-}
-
-input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+    border-color: #e74c3c;
 }
 
 .form-note {
-    font-size: 0.9rem;
-    color: #475569;
+    font-size: 13px;
+    color: #7f8c8d;
     margin-bottom: 16px;
+    padding: 8px 12px;
+    background: #f0f3ff;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
 }
 
+/* ======================
+   LOGIN CONTAINER
+   ====================== */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header h1 {
+    font-size: 32px;
+    color: #667eea;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #7f8c8d;
+    font-size: 15px;
+}
+
+mensagem {
+    display: block;
+    margin: 20px 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #f0f3ff;
+    border-left: 4px solid #667eea;
+    text-align: center;
+}
+
+mensagem a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+mensagem a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+mensagem p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* ======================
+   TABLES
+   ====================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead th {
+    text-align: left;
+    padding: 16px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e6ed;
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background: #f9f9fc;
+}
+
+tbody td {
+    padding: 16px 12px;
+    vertical-align: middle;
+    color: #2c3e50;
+}
+
+/* ======================
+   USUARIO / LISTA ITENS
+   ====================== */
 .usuario {
     display: block;
     margin-bottom: 14px;
-    font-size: 0.95rem;
-    color: #334155;
-}
-
-.mensagem {
-    margin: 16px 0;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    color: #667eea;
+    background: #f0f3ff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
 }
 
 .lista-itens {
@@ -204,13 +527,97 @@ input:focus {
     background: white;
     margin-bottom: 12px;
     border-radius: 12px;
-    padding: 14px;
-    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.08);
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.lista-itens li:hover {
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
 }
 
 .footer-total {
     text-align: right;
-    margin-top: 18px;
-    font-size: 1.05rem;
-    font-weight: bold;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 2px solid #e0e6ed;
+    font-size: 18px;
+    font-weight: 800;
+    color: #667eea;
+}
+
+/* ======================
+   SCROLLBAR STYLING
+   ====================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ======================
+   RESPONSIVE DESIGN
+   ====================== */
+@media (max-width: 768px) {
+    .frame-left {
+        flex: 0 0 200px;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+    }
+
+    painel {
+        padding: 16px;
+        margin: 12px;
+    }
+
+    cabecalho {
+        padding: 10px 16px;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-logo {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .frame-left {
+        display: none;
+    }
+
+    .frame-row {
+        flex-direction: column;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-card {
+        padding: 24px;
+    }
+
+    painel h2 {
+        font-size: 22px;
+    }
 }

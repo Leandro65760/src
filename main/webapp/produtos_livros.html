@@ -8,49 +8,104 @@
 <body>
     <painel>
         <h2> Livros </h2>
-        <table>
-            <thead>
-                <tr><th>Imagem</th><th>Produto</th><th>Preço</th><th>Comprar</th></tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Java Avançado"></td>
-                    <td>Java Avançado<br>Técnicas avançadas em Java</td>
-                    <td>R$ 99,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L001"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="CSS Moderno"></td>
-                    <td>CSS Moderno<br>Guia de estilo e design web</td>
-                    <td>R$ 79,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L002"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="História do Brasil"></td>
-                    <td>História do Brasil<br>Narrativas dos fatos históricos</td>
-                    <td>R$ 64,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L003"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Fotografia"></td>
-                    <td>Fotografia<br>Manual de fotografia digital</td>
-                    <td>R$ 89,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L004"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Receitas Veganas"></td>
-                    <td>Receitas Veganas<br>Receitas saudáveis e práticas</td>
-                    <td>R$ 59,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L005"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-                <tr>
-                    <td><img class="produto-imagem" src="imagem/livro.svg" alt="Autoajuda"></td>
-                    <td>Autoajuda<br>Foco e produtividade</td>
-                    <td>R$ 69,90</td>
-                    <td><form method="post" action="ComprarServlet" target="mainFrame"><input type="hidden" name="produtoId" value="L006"><input type="hidden" name="quantidade" value="1"><button class="botao" type="submit">Comprar</button></form></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/livro.svg" alt="Java Avançado">
+                <div class="produto-info">
+                    <h3>Java Avançado</h3>
+                    <p class="produto-desc">Técnicas avançadas em Java</p>
+                    <p class="produto-preco">R$ 99,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="L001">
+                        <div class="quantidade-group">
+                            <label for="qty-L001">Qtd:</label>
+                            <input type="number" id="qty-L001" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/livro.svg" alt="CSS Moderno">
+                <div class="produto-info">
+                    <h3>CSS Moderno</h3>
+                    <p class="produto-desc">Guia de estilo e design web</p>
+                    <p class="produto-preco">R$ 79,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="L002">
+                        <div class="quantidade-group">
+                            <label for="qty-L002">Qtd:</label>
+                            <input type="number" id="qty-L002" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/livro.svg" alt="História do Brasil">
+                <div class="produto-info">
+                    <h3>História do Brasil</h3>
+                    <p class="produto-desc">Narrativas dos fatos históricos</p>
+                    <p class="produto-preco">R$ 64,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="L003">
+                        <div class="quantidade-group">
+                            <label for="qty-L003">Qtd:</label>
+                            <input type="number" id="qty-L003" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/livro.svg" alt="Fotografia">
+                <div class="produto-info">
+                    <h3>Fotografia</h3>
+                    <p class="produto-desc">Manual de fotografia digital</p>
+                    <p class="produto-preco">R$ 89,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="L004">
+                        <div class="quantidade-group">
+                            <label for="qty-L004">Qtd:</label>
+                            <input type="number" id="qty-L004" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/livro.svg" alt="Receitas Veganas">
+                <div class="produto-info">
+                    <h3>Receitas Veganas</h3>
+                    <p class="produto-desc">Receitas saudáveis e práticas</p>
+                    <p class="produto-preco">R$ 59,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="L005">
+                        <div class="quantidade-group">
+                            <label for="qty-L005">Qtd:</label>
+                            <input type="number" id="qty-L005" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="produto-imagem" src="imagem/livro.svg" alt="Autoajuda">
+                <div class="produto-info">
+                    <h3>Autoajuda</h3>
+                    <p class="produto-desc">Foco e produtividade</p>
+                    <p class="produto-preco">R$ 69,90</p>
+                    <form method="post" action="ComprarServlet" target="mainFrame" class="produto-form">
+                        <input type="hidden" name="produtoId" value="L006">
+                        <div class="quantidade-group">
+                            <label for="qty-L006">Qtd:</label>
+                            <input type="number" id="qty-L006" name="quantidade" value="1" min="1" max="100">
+                        </div>
+                        <button class="botao botao-comprar" type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </painel>
 </body>
 </html>

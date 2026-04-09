@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Top Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <cabecalho>
-        <img class="logo" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='60'%3E%3Crect width='240' height='60' fill='%2300488b'/%3E%3Ctext x='120' y='38' font-size='24' text-anchor='middle' fill='%23ffffff'%3EPramps Shop%3C/text%3E%3C/svg%3E" alt="Pramps Shop Logo">
-        <nav>
-            <a href="CarrinhoServlet" target="mainFrame">Carrinho</a>
-            <a href="LoginServlet" target="leftFrame">Login</a>
+        <div class="navbar-left">
+            <button class="btn-home" onclick="parent.window.location.href='index.html'" title="Página Principal">
+                <i class="fas fa-home"></i>
+            </button>
+            <a href="javascript:void(0)" class="navbar-brand">LL Shop</a>
+        </div>
+        <div class="navbar-center">
+            <img class="navbar-logo" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Ccircle cx='25' cy='25' r='24' fill='%23ffffff' stroke='%233b82f6' stroke-width='2'/%3E%3Ctext x='25' y='32' font-size='20' font-weight='bold' text-anchor='middle' fill='%233b82f6'%3ELL%3C/text%3E%3C/svg%3E" alt="LL Shop Logo">
+        </div>
+        <nav class="navbar-right">
+            <a href="javascript:void(0)" class="nav-icon" onclick="parent.document.getElementById('mainFrame').src='CarrinhoServlet'" title="Carrinho">
+                <i class="fas fa-basket-shopping"></i>
+                <span class="badge" id="cart-count">0</span>
+            </a>
+            <a href="javascript:void(0)" class="nav-icon" onclick="parent.document.getElementById('mainFrame').src='LoginServlet'" title="Conta">
+                <i class="fas fa-user"></i>
+            </a>
         </nav>
     </cabecalho>
 </body>

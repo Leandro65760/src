@@ -2,14 +2,31 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Pramps Shop</title>
+    <title>LL Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <iframe name="topFrame" src="topbar.html" class="frame-top" title="Topo"></iframe>
+    <iframe name="topFrame" id="topFrame" src="topbar.html" class="frame-top" title="Topo" frameborder="0"></iframe>
     <div class="frame-row">
-        <iframe name="leftFrame" src="DepartmentServlet" class="frame-left" title="Departamentos"></iframe>
-        <iframe name="mainFrame" src="produtos_eletronicos.html" class="frame-right" title="Produtos"></iframe>
+        <iframe name="leftFrame" id="leftFrame" src="DepartmentServlet" class="frame-left" title="Departamentos" frameborder="0"></iframe>
+        <iframe name="mainFrame" id="mainFrame" src="produtos_eletronicos.html" class="frame-right" title="Conteúdo" frameborder="0"></iframe>
     </div>
+    <script>
+        function updateCartCount() {
+            // Atualizar contador de carrinho quando necessário
+            try {
+                const mainFrameDoc = document.getElementById('mainFrame').contentDocument;
+                if (mainFrameDoc && mainFrameDoc.body) {
+                    const cartBadge = document.querySelector('#cart-count');
+                    if (cartBadge) {
+                        // Tentar obter o count do carrinho (implementar conforme necessário)
+                    }
+                }
+            } catch (e) {
+                console.log('Cart update not available across frames');
+            }
+        }
+        setInterval(updateCartCount, 1000);
+    </script>
 </body>
 </html>
